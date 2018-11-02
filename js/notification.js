@@ -94,7 +94,7 @@
         if (!isTokenSentToServer()) {
           console.log('Sending token to server...', subscription_id);
           fetch('https://8oh5cnw80e.execute-api.eu-west-1.amazonaws.com/dev/', {
-            method: 'post',
+            method: 'POST',
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
