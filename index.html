@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Wheel of Fortune</title>
+   
+    
+    <style type="text/css">
+    body {
+        overflow: hidden;
+		margin:0;
+      
+	  
+    }
+	.fire{
+	height:100px}
+    .chart-warpper {
+          position: relative;
+		  width: 1200px;
+    margin: auto;
+	bottom: -150px;
+        
+    }
+   img {
+    width: 100%;
+    height: auto;
+}
+.diya img {
+    width: 42%;
+    display: block;
+    text-align: center;
+    margin: auto}
+.rocket{
+position: relative;
+}
+.rocket.right{
+    width: 20%;
+transform: rotate(-80deg);
+position: absolute;
+    bottom: 0;
+    right: 50px;
+}
+.rocket.left{
+    width: 20%;
+transform: rotate(-5deg);
+position: absolute;
+    bottom: 0;
+    lefr: 30px;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+</head>
+
+
+<div id="player">
+    <audio id="audio" hidden >
+     <source src="Firework.mp3" type="audio/mpeg">
+                If you're reading this, audio isn't supported. 
+    </audio>
+	
+</div>
+ <main>
+ 	<div class="fire"><img src="giphy.gif" alt=""/></div> 
+    <section class="chart-warpper">
+    <div class="rocket left"><img src="roket.gif" alt=""/></div>
+	<div class="diya"><img src="diya.gif" alt=""/></div> 
+	
+	<div class="rocket right"><img src="roket.gif" alt=""/></div>
+    </section>
+    </main>
+    <script type="text/javascript" charset="utf-8">
+    
+    
+    
+jQuery(document).ready(function(){
+var audio = $("#audio")[0];
+    
+$('.diya').click(function(){
+audio.currentTime = 0;
+    audio.play();
+
+});
+	  $(".rocket.left").animate({left: '+=300', top: '-=400', width: '-=10%', opacity: '-=1', queue: 'my-animation'}, 1800, function(){$('.diya').trigger("click")});
+	$(".rocket.right").animate({right: '-=25', top: '-=800', width: '-=10%',  opacity: '-=1', queue: 'my-animation'}, 1800).dequeue('my-animation');
+});
+
+    </script>
+	<script src="js/main.js"></script>
+    <script src="js/notification.js"></script>
+</body>
+</html>
+<body>
