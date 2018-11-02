@@ -18,7 +18,7 @@ firebase.initializeApp(config);
 const messaging = firebase.messaging();
 //This is the public key of the web app in firebase
 messaging.usePublicVapidKey('BCfmeEXSFKLM-CreztK87HZtfTBitwCNR-5WipuzrgrHJMF90CVp14Wb7WquItOXlURTJRsNs3sXTv-RTtMF8sY');
-navigator.serviceWorker.register('firebase-messaging-sw.js')
+navigator.serviceWorker.register('./firebase-messaging-sw.js')
   .then((registration) => {
     messaging.useServiceWorker(registration);
 
