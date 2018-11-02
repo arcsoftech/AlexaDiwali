@@ -6,15 +6,7 @@
     console.log('Message received. ', payload);
     const type = payload.data.type;
     window.localStorage.setItem('bulletinType', type);
-    if(type == 'bulletin_alert') {
-      window.localStorage.setItem('bulletinMsg', JSON.stringify(payload.data.message));
-      $('#messageBoardContent').html(payload.data.message);
-      $('#outerContainer').hide();
-      $('#messageBoard').show();
-    }
-    else {
-      location.reload();
-    }
+    location.reload();
   });
 
   //To check `push notification` is supported or not
