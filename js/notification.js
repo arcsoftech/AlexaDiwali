@@ -93,20 +93,24 @@
       function saveSubscriptionID(subscription_id) {
         if (!isTokenSentToServer()) {
           console.log('Sending token to server...', subscription_id);
-          fetch('https://8oh5cnw80e.execute-api.eu-west-1.amazonaws.com/dev/', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://8oh5cnw80e.execute-api.eu-west-1.amazonaws.com/dev/",
+            "method": "POST",
+            "headers": {
+              "content-type": "application/json",
+              "cache-control": "no-cache"
             },
-            body: JSON.stringify({
+            "processData": false,
+            "data": JSON.stringify({
               SubscriptionID: subscription_id
             })
-          }).then(function (data) {
+          }
+
+          $.ajax(settings).done(function (response) {
             console.log(data);
             setTokenSentToServer(true);
-          }).catch(function (err) {
-            console.log(err);
           });
         } else {
           console.log('Token already sent to server so won\'t send it again ' +
