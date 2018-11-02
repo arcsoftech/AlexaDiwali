@@ -2,7 +2,7 @@
   'use strict';
   navigator.serviceWorker.register('./firebase-messaging-sw.js')
     .then((registration) => {
-      messaging.useServiceWorker(registration);
+      firebase.messaging().useServiceWorker(registration);
       messaging.onMessage(function (payload) {
         console.log('Message received. ', payload);
         const type = payload.data.type;
