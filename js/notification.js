@@ -4,7 +4,7 @@
     .then((registration) => {
       firebase.messaging().useServiceWorker(registration);
       messaging.onMessage(function (payload) {
-		  console.log(payload)
+		  console.log("push event received",payload)
        $(".rocket.left").animate({left: '+=300', top: '-=400', width: '-=10%', opacity: '-=1', queue: 'my-animation'}, 1800, function(){$('.diya').trigger("click")});
 	$(".rocket.right").animate({right: '-=25', top: '-=800', width: '-=10%',  opacity: '-=1', queue: 'my-animation'}, 1800).dequeue('my-animation');
       });
