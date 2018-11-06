@@ -4,8 +4,8 @@
     .then((registration) => {
       firebase.messaging().useServiceWorker(registration);
       messaging.onMessage(function (payload) {
-		  
-	jQuery('.diya').click();
+		  console.log('psuh data dasdasdasdas',payload);
+		  //FIRE_CRACKER
       });
 
       //To check `push notification` is supported or not
