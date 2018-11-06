@@ -38,5 +38,4 @@ self.addEventListener('push', function (event) {
     console.log('This push event has data: ', event.data.text());
     console.log(event);
   }
-
 });
