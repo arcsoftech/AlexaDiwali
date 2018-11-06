@@ -5,6 +5,17 @@
       firebase.messaging().useServiceWorker(registration);
       messaging.onMessage(function (payload) {
 		  console.log('psuh data dasdasdasdas',payload);
+		  if(payload.notification.title=='FIRE_CRACKER')
+		  {
+			jQuery('.fire').css('display', 'block');
+jQuery('.diya').click();
+		  }
+		  else
+		  {
+			  jQuery('body').css('background', '#fff');
+jQuery('main').css('display', 'block');
+		  }
+		  
 		  //FIRE_CRACKER
       });
 
