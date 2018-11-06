@@ -13,9 +13,11 @@
 	  
     }
 	body {
-  background: #fff;
+  background: black;
 }
-
+main, .fire {
+display: none;
+}
 .lightrope {
   text-align: center;
   white-space: nowrap;
@@ -1308,6 +1310,15 @@ body {
     
     
 jQuery(document).ready(function(){
+
+function showcontent(){
+jQuery('body').css('background', '#fff');
+jQuery('main').css('display', 'block');
+}
+
+
+
+
 var audio = $("#audio")[0];
     
 $('.diya').click(function(){
@@ -1315,6 +1326,11 @@ audio.currentTime = 0;
     audio.play();
 
 });
+
+function fire(){
+jQuery('.fire').css('display', 'block');
+jQuery('.diya').click();
+}
 	  $(".rocket.left").animate({left: '+=300', top: '-=400', width: '-=10%', opacity: '-=1', queue: 'my-animation'}, 1800, function(){$('.diya').trigger("click")});
 	$(".rocket.right").animate({right: '-=25', top: '-=800', width: '-=10%',  opacity: '-=1', queue: 'my-animation'}, 1800).dequeue('my-animation');
 });
