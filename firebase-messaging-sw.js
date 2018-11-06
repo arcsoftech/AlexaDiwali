@@ -36,6 +36,6 @@ const messaging = firebase.messaging();
 self.addEventListener('push', function (event) {
   if (event.data) {
     console.log('This push event has data: ', event.data.text());
-    console.log(event);=
+    console.log(event);
 
 });
